@@ -1,0 +1,93 @@
+@import './scss/projects-page.scss';
+@import './scss/detail-page.scss';
+@import './scss/checkbox.scss';
+@import './scss/swiper.scss';
+@import './scss/modal-gallery.scss';
+@import './scss/modal-order.scss';
+@import './scss/modal-demo.scss';
+@import './scss/loader.scss';
+@import url(https://db.onlinewebfonts.com/c/0f106940a384f214837a8df504786e1a?family=Formular);
+
+html {
+  scroll-behavior: smooth;
+
+  * {
+    box-sizing: border-box;
+
+  }
+
+  padding: 50px 0;
+  box-sizing: border-box;
+  background: radial-gradient(99.61% 69.94% at 2.5% 36.91%, #0050BB 0%, #000418 100%);
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Formular',
+  sans-serif;
+
+  @media (max-width: 1023px) {
+    font-size: 16px !important;
+  }
+}
+
+input,
+button {
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Formular', sans-serif;
+
+  @media (max-width: 1023px) {
+    font-size: 16px !important;
+  }
+}
+
+input {
+  all: unset;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  max-width: 1701px;
+  margin: 0 auto;
+
+  @media(max-width:1460px) {
+    max-width: 1200px;
+  }
+
+  @media(max-width:1024px) {
+    max-width: 1164px;
+  }
+
+  @media(max-width:992px) {
+    max-width: 750px;
+  }
+
+  @media(max-width:767px) {
+    max-width: none !important;
+    padding: 0 15px;
+  }
+}
+
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}

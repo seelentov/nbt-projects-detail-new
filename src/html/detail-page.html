@@ -1,0 +1,33 @@
+<div class="detail-page">
+  <div class="container">
+    <a class="detail-page__back" href="/">
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 11.9995H5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12 18.9995L5 11.9995L12 4.99951" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <p>К списку решений</p>
+    </a>
+    <div class="detail-page__container">
+      <div class="detail-page__content">
+        {{> detail-header }}
+        {{> detail-func }}
+        {{> detail-desc }}
+        {{> detail-interface }}
+        {{> detail-video }}
+        {{> detail-brands }}
+      </div>
+      <aside class="aside">
+        <a href="#detail-project__desc">Описание</a>
+        <a href="#detail-project__interface">Скриншоты</a>
+        <a href="#detail-project__video">Видео</a>
+        <a href="#detail-project__brands">Уже используют решение</a>
+      </aside>
+    </div>
+  </div>
+  <div class="container">
+    {{> detail-more}}
+  </div>
+</div>
+{{> modal-gallery }}
+{{> modal-demo }}
+{{> modal-order}}

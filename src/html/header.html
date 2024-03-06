@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="container header__container">
+    <h1 class="header__title">Каталог готовых решений</h1>
+    <p class="header__desc">Идейные соображения высшего порядка, а также синтетическое тестирование предопределяет
+      высокую
+      востребованность стандартных подходов. Прежде всего.</p>
+    <form class="header__filter" action="#">
+      <input class="header__filter-input filter-input" type="text" name="filter-input" placeholder="Поиск по решениям"
+        id="filter-input">
+      <div class="header__filter-sort filter-sort">
+        <div class="filter-sort__desc">
+          Сортировать решения:<span>новые</span> <img src="/arrow-top.svg">
+        </div>
+        <input type="text" id="filter-sort" data-attr="filter-sort" value="date" style="display: none;">
+        <div id="filter-sort__select" class="filter-sort__select" name="filter-sort" data-attr="filter-sort_options">
+          <div data-attr="filter-sort_option" value="date" class="filter-sort__select-option active">По дате</div>
+          <div data-attr="filter-sort_option" value="price_low" class="filter-sort__select-option">По убыванию
+            стоимости</div>
+          <div data-attr="filter-sort_option" value="price_high" class="filter-sort__select-option">По возрастанию
+            стоимости</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

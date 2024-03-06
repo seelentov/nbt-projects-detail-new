@@ -1,0 +1,123 @@
+.input-check {
+  display: block;
+
+  * {
+    transition: all .2s ease-in-out;
+  }
+}
+
+.input-check input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+
+}
+
+.input-check label {
+  position: relative;
+  cursor: pointer;
+
+}
+
+.input-check label:before {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1.5px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+
+}
+
+.input-check input:checked+label{
+  color: rgba(142, 240, 239, 1);
+}
+
+.input-check input:checked+label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 7px;
+  width: 6px;
+  height: 14px;
+  border: solid rgba(142, 240, 239, 1);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.input-check input:checked+label:before {
+  content: '';
+  border: 1.5px solid rgba(142, 240, 239, 1);
+}
+
+
+
+
+
+
+.input-check--black {
+  display: block;
+
+  * {
+    transition: all .2s ease-in-out;
+  }
+}
+
+.input-check--black input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+
+}
+
+.input-check--black label {
+  position: relative;
+  cursor: pointer;
+
+}
+
+.input-check--black label:before {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid rgba(0, 20, 113, 1);
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 12px;
+  translate: 0 -2px;
+}
+
+
+
+.input-check--black input:checked+label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 5px;
+  height: 12px;
+  border: solid rgb(142, 240, 239);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.input-check--black input:checked+label:before {
+  content: '';
+}
