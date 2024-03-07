@@ -3,9 +3,9 @@ export default () => {
   const videoThumb = document.querySelector('[data-attr="video__thumb"]')
   const video = document.querySelector('[data-attr="video__video"]')
 
-  if (!videoBtn) return
+  if (!videoBtn || !videoThumb || !video) return
 
-  videoBtn.addEventListener('click', ()=>{
+  videoBtn.addEventListener('click', () => {
     videoThumb.style.display = 'none'
     video.play()
   })

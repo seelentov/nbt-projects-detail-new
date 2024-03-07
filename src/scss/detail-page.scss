@@ -594,8 +594,9 @@
 
 
 
-      video {
-      z-index: 1;
+      video,
+      iframe {
+        z-index: 1;
         position: absolute;
         top: 0;
         left: 0;
@@ -620,17 +621,18 @@
         object-fit: cover;
       }
 
-      &-btn{
+      &-btn {
         position: absolute;
         top: calc(50% - 39px);
         left: calc(50% - 39px);
         cursor: pointer;
         transition: all .2s ease-in-out;
-        img{
+
+        img {
           border-radius: 50%;
         }
 
-        &:hover{
+        &:hover {
           opacity: 0.5;
         }
       }
