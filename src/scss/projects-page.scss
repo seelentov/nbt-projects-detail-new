@@ -124,11 +124,15 @@
   }
 
   .filter-input {
+    &::placeholder {
+      color: white
+    }
+
     border: 1px solid #FFFFFF;
     padding: 16px 24px;
     width: 697px;
     border-radius: 10px;
-    background-color: none;
+    background-color: transparent;
 
     @media (max-width: 1440px) {
       width: auto;

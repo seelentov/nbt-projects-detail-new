@@ -507,8 +507,7 @@
       img {
         width: 270px;
 
-        @media (max-width: 1023px) {
-        }
+        @media (max-width: 1023px) {}
       }
 
       @media (max-width: 1023px) {
@@ -808,8 +807,11 @@
       height: 35px;
     }
 
-    .more-item__bottom-btn{
-      width: 100%;
+    .more-item__bottom-btn {
+      @media (max-width: 1023px) {
+        width: 100%;
+
+      }
     }
   }
 
@@ -936,6 +938,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+
 
       @media (max-width: 1023px) {
         gap: 20px;
