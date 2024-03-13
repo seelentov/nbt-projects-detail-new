@@ -916,6 +916,10 @@
     &__text {}
 
     &__text-title {
+      @media (max-width: 1023px) {
+        font-size: 18px;
+      }
+
       font-weight: 400;
       font-size: 34px;
       margin: 30px 0 20px 0;
