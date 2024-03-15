@@ -131,7 +131,7 @@
     border: 1px solid #FFFFFF;
     padding: 16px 24px;
     width: 697px;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: transparent;
 
     @media (max-width: 1440px) {
@@ -148,9 +148,21 @@
   .filter-sort {
     z-index: 3;
 
+    img{
+      rotate: 180deg;
+    }
+   
+
+
     &:hover {
+      img{
+        rotate: 0deg;
+      }
+
       .filter-sort__select {
         display: block;
+
+        
       }
     }
 
