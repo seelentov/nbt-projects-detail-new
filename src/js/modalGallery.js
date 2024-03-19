@@ -37,7 +37,9 @@ export default () => {
     const container = item
     const img = item.querySelector('img')
 
-    let n = 0
+    let zoom = 0
+
+    let prevDistance = 0
 
     container.addEventListener('touchmove', (event) => {
       if (event.touches.length === 2) {
@@ -51,9 +53,18 @@ export default () => {
 
         const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
 
-        n = n + currentDistance
+        if (prevDistance !== 0) {
+          if (currentDistance > prevDistance) {
+            zoom += 1
+          } else if (currentDistance < prevDistance) {
+            zoom -= 1
+          }
+        }
 
-        img.style.height = `calc(100% + ${n}px)`
+        prevDistance = currentDistance
+
+
+        img.style.height = `calc(100% + ${zoom > 0 ? zoom : 0}px)`
       }
     })
   })
