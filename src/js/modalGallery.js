@@ -41,6 +41,8 @@ export default () => {
     let scaleFactor = 0
     container.addEventListener('touchstart', (event) => {
       if (event.touches.length === 2) {
+        e.preventDefault()
+        e.stopPropagation()
         //if (true) {
         const touch1 = event.touches[0]
         const touch2 = event.touches[1]
@@ -55,6 +57,8 @@ export default () => {
 
     container.addEventListener('touchmove', (event) => {
       if (event.touches.length === 2) {
+        e.preventDefault()
+        e.stopPropagation()
         //if (true) {
 
 
@@ -69,11 +73,12 @@ export default () => {
         if (initialDistance < currentDistance) {
           scroll = currentDistance - initialDistance
           scaleFactor += scroll
-          container.scrollBy(scroll / 2, scroll / 2)
+          if (scaleFactor > 0) container.scrollBy(scroll / 2, scroll / 2)
+
         } else {
           scroll = initialDistance - currentDistance
           scaleFactor -= scroll
-          container.scrollBy(scroll / 2, scroll / 2)
+          if (scaleFactor > 0) container.scrollBy(scroll / 2, scroll / 2)
         }
 
         initialDistance = currentDistance
