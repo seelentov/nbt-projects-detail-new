@@ -83,7 +83,6 @@ export default () => {
         initialDistance = currentDistance
 
 
-        if (scaleFactor > 0) container.scrollBy(-(scroll / 2), -(scroll / 2))
         console.log(scaleFactor)
         img.style.height = `calc(100% + ${scaleFactor > 0 ? scaleFactor : 0}px)`
       }
