@@ -48,6 +48,8 @@ export default () => {
     let isPinching = false
 
     container.addEventListener('touchstart', function (event) {
+      event.stopPropagation()
+      event.preventDefault()
       if (event.touches.length === 2) {
         isPinching = true
         initialScale = currentScale
@@ -61,6 +63,8 @@ export default () => {
     })
 
     container.addEventListener('touchmove', function (event) {
+      event.stopPropagation()
+      event.preventDefault()
       if (isPinching && event.touches.length === 2) {
         let touch1 = event.touches[0]
         let touch2 = event.touches[1]
@@ -80,6 +84,8 @@ export default () => {
     })
 
     container.addEventListener('touchend', function (event) {
+      event.stopPropagation()
+      event.preventDefault()
       isPinching = false
       initialX = currentX
       initialY = currentY
