@@ -37,28 +37,19 @@ export default () => {
     const container = item
     const img = item.querySelector('img')
 
-    let n = 0
-
     container.addEventListener('touchmove', (event) => {
       if (event.touches.length === 2) {
+        //if (true) {
         const touch1 = event.touches[0]
         const touch2 = event.touches[1]
+        //const touch2 = {
+        //  clientX: 0,
+        //  clientY: 0
+        //}
 
         const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
 
-        if (currentDistance > n) {
-          n = currentDistance
-        } else {
-          n = currentDistance
-        }
-
-        img.style.height = `calc(100% + ${n}px);`
-
-        if (currentDistance > n) {
-          galleryItem.scrollBy(n, n)
-        } else {
-          galleryItem.scrollBy(-n, -n)
-        }
+        img.style.height = `calc(100% + ${currentDistance}px)`
       }
     })
   })
