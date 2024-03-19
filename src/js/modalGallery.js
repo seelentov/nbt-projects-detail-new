@@ -37,12 +37,9 @@ export default () => {
     const container = item
     const img = item.querySelector('img')
 
-    let zoom = 0
-
-    let prevDistance = 0
-
-    container.addEventListener('touchmove', (event) => {
-
+    let initialDistance = 0 // изначальное расстояние между двумя пальцами
+    let scaleFactor = 0
+    container.addEventListener('touchstart', (event) => {
       //if (event.touches.length === 2) {
       if (true) {
         const touch1 = event.touches[0]
@@ -52,20 +49,27 @@ export default () => {
           clientY: 0
         }
 
-        const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
+        console.log('touchstart')
+        initialDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
+      }
+    })
 
-        if (prevDistance !== 0) {
-          if (currentDistance > prevDistance) {
-            zoom = 10
-          } else if (currentDistance < prevDistance) {
-            zoom = 10
-          }
+    container.addEventListener('touchmove', (event) => {
+      //if (event.touches.length === 2) {
+      if (true) {
+        console.log('touchmove')
+
+        const touch1 = event.touches[0]
+        //const touch2 = event.touches[1]
+        const touch2 = {
+          clientX: 0,
+          clientY: 0
+
         }
+        const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
+        scaleFactor += currentDistance - initialDistance
 
-        prevDistance = currentDistance
-
-
-        img.style.height = `calc(100% + ${zoom > 0 ? zoom : 0}px)`
+        img.style.height = `calc(100% + ${scaleFactor > 0 ? scaleFactor : 0}px)`
       }
     })
   })
