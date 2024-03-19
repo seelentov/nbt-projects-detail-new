@@ -40,14 +40,14 @@ export default () => {
     let initialDistance = 0 // изначальное расстояние между двумя пальцами
     let scaleFactor = 0
     container.addEventListener('touchstart', (event) => {
-      //if (event.touches.length === 2) {
-      if (true) {
+      if (event.touches.length === 2) {
+        //if (true) {
         const touch1 = event.touches[0]
-        //const touch2 = event.touches[1]
-        const touch2 = {
-          clientX: 0,
-          clientY: 0
-        }
+        const touch2 = event.touches[1]
+        //const touch2 = {
+        //  clientX: 0,
+        //  clientY: 0
+        //}
 
         console.log('touchstart')
         initialDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
@@ -55,17 +55,17 @@ export default () => {
     })
 
     container.addEventListener('touchmove', (event) => {
-      //if (event.touches.length === 2) {
-      if (true) {
+      if (event.touches.length === 2) {
+        //if (true) {
         console.log('touchmove')
 
         const touch1 = event.touches[0]
-        //const touch2 = event.touches[1]
-        const touch2 = {
-          clientX: 0,
-          clientY: 0
+        const touch2 = event.touches[1]
+        //const touch2 = {
+        //  clientX: 0,
+        //  clientY: 0
 
-        }
+        //}
         const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
         scaleFactor += currentDistance - initialDistance
 
