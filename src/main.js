@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modules: [Navigation, Pagination],
     pagination: {
       el: '.swiper-pagination',
+      clickable: true
     },
     navigation: {
       nextEl: '.interface__btns--forw',
