@@ -71,7 +71,7 @@ export default () => {
           scaleFactor += scroll
           container.scrollBy(scroll / 2, scroll / 2)
         } else {
-          scroll = currentDistance - initialDistance
+          scroll = initialDistance - currentDistance
           scaleFactor -= scroll
           container.scrollBy(scroll / 2, scroll / 2)
         }
