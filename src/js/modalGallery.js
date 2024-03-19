@@ -55,9 +55,9 @@ export default () => {
 
         if (prevDistance !== 0) {
           if (currentDistance > prevDistance) {
-            zoom += 1
+            zoom += 3
           } else if (currentDistance < prevDistance) {
-            zoom -= 1
+            zoom -= 3
           }
         }
 
