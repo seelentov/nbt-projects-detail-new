@@ -39,6 +39,8 @@ export default () => {
     let initialY = 0
     let currentX = 0
     let currentY = 0
+    let prevX = 0
+    let prevY = 0
 
     const container = item
     const img = item.querySelector('img')
@@ -53,23 +55,27 @@ export default () => {
         isPinching = false
         initialX = currentX
         initialY = currentY
+        prevX = event.touches[0].clientX
+        prevY = event.touches[0].clientY
       }
     })
 
     container.addEventListener('touchmove', function (event) {
       if (isPinching && event.touches.length === 2) {
-        let pinchDistance = Math.hypot(
-          event.touches[0].clientX - event.touches[1].clientX,
-          event.touches[0].clientY - event.touches[1].clientY
-        )
+        let touch1 = event.touches[0]
+        let touch2 = event.touches[1]
+        let pinchDistance = Math.hypot(touch1.clientX - touch2.clientX, touch1.clientY - touch2.clientY)
         currentScale = initialScale + (pinchDistance / 100)
-        img.style.transform = scale(`${currentScale}`)
+        img.style.transform = `scale(${currentScale})`
       } else if (!isPinching && event.touches.length === 1) {
         event.preventDefault()
         let touch = event.touches[0]
-        currentX = initialX + touch.clientX - touch.clientX
-        currentY = initialY + touch.clientY - touch.clientY
-        img.style.transform = `translate(${currentX}px, ${currentY}px)`
+        currentX = initialX + touch.clientX - prevX
+        currentY = initialY + touch.clientY - prevY
+        img.style.left = `${currentX}px`
+        img.style.top = `${currentY}px`
+        prevX = touch.clientX
+        prevY = touch.clientY
       }
     })
 
