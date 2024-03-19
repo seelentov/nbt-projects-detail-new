@@ -67,9 +67,13 @@ export default () => {
         //}
         const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
         if (initialDistance < currentDistance) {
-          scaleFactor += currentDistance - initialDistance
+          scroll = currentDistance - initialDistance
+          scaleFactor += scroll
+          container.scrollBy(scroll / 2, scroll / 2)
         } else {
-          scaleFactor -= initialDistance - currentDistance
+          scroll = currentDistance - initialDistance
+          scaleFactor -= scroll
+          container.scrollBy(scroll / 2, scroll / 2)
         }
 
         initialDistance = currentDistance
