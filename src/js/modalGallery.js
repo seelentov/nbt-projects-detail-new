@@ -36,5 +36,21 @@ export default () => {
 
     const container = item
     const img = item.querySelector('img')
+
+    // Добавляем обработчик события pinch для элемента .gallery-item
+    galleryItem.addEventListener('touchmove', (event) => {
+      if (event.touches.length === 2) {
+        // Здесь можно реагировать на масштабирование пальцами
+        const touch1 = event.touches[0]
+        const touch2 = event.touches[1]
+
+        const deltaY = touch2.clientY - touch1.clientY
+
+        const img = galleryItem.querySelector('img')
+        img.style.height = `${+img.clientHeight + 1}px`
+
+        galleryItem.scrollBy(1, 1)
+      }
+    })
   })
 }
