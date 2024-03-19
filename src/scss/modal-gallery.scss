@@ -174,7 +174,12 @@
 
   &__item {
     border-radius: 30px;
-    overflow: scroll;
+    overflow: hidden;
+
+    @media (max-width: 1023px) {
+      overflow: scroll;
+
+    }
 
     height: 100%;
     width: 100%;
