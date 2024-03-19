@@ -67,7 +67,13 @@ export default () => {
 
         //}
         const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
-        scaleFactor += currentDistance - initialDistance
+        if (currentDistance < initialDistance) {
+          scaleFactor += initialDistance - currentDistance
+        } else {
+          scaleFactor -= currentDistance - initialDistance
+        }
+
+
 
         img.style.height = `calc(100% + ${scaleFactor > 0 ? scaleFactor : 0}px)`
       }
