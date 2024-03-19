@@ -56,11 +56,9 @@ export default () => {
 
         if (prevDistance !== 0) {
           if (currentDistance > prevDistance) {
-            zoom += 10
-            container.scrollBy(5, 5)
+            zoom = 10
           } else if (currentDistance < prevDistance) {
-            zoom -= 10
-            container.scrollBy(-5, -5)
+            zoom = 10
           }
         }
 
