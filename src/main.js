@@ -86,8 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swiperGallery = new Swiper('.gallery__swiper', {
     modules: [Navigation, Pagination],
+    allowTouchMove: false,
     pagination: {
       el: '.swiper-pagination',
+    },
+    breakpoints: {
+      '1023': {
+        allowTouchMove: true
+      },
     },
     navigation: {
       nextEl: '.gallery__btns--forw',
