@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modules: [Navigation, Pagination],
     pagination: {
       el: '.swiper-pagination',
+      clickable: true
     },
     navigation: {
       nextEl: '.brands__btns--forw',
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modules: [Navigation, Pagination],
     pagination: {
       el: '.swiper-pagination',
+      clickable: true
     },
     navigation: {
       nextEl: '.more__btns--forw',
@@ -89,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     allowTouchMove: false,
     pagination: {
       el: '.swiper-pagination',
+      clickable: true
     },
     breakpoints: {
       '1023': {
