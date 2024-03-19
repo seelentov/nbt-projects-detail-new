@@ -73,17 +73,27 @@ export default () => {
         if (initialDistance < currentDistance) {
           scroll = currentDistance - initialDistance
           scaleFactor += scroll
-          if (scaleFactor > 0) container.scrollBy(scroll / 2, scroll / 2)
+
+          const deltaX = container.offsetWidth / 2 // половина ширины контейнера
+          const deltaY = container.offsetHeight / 2 // половина высоты контейнера
+
+          if (scaleFactor > 0) {
+            container.scrollBy(scroll / 2 + deltaX, scroll / 2 + deltaY)
+          }
         } else {
           scroll = initialDistance - currentDistance
           scaleFactor -= scroll
-          if (scaleFactor > 0) container.scrollBy(-(scroll / 2), -(scroll / 2))
+
+          const deltaX = container.offsetWidth / 2 // половина ширины контейнера
+          const deltaY = container.offsetHeight / 2 // половина высоты контейнера
+
+          if (scaleFactor > 0) {
+            container.scrollBy(-(scroll / 2 + deltaX), -(scroll / 2 + deltaY))
+          }
         }
 
         initialDistance = currentDistance
 
-
-        console.log(scaleFactor)
         img.style.height = `calc(100% + ${scaleFactor > 0 ? scaleFactor : 0}px)`
       }
     })
