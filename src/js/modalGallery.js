@@ -42,22 +42,25 @@ export default () => {
     let prevDistance = 0
 
     container.addEventListener('touchmove', (event) => {
-      if (event.touches.length === 2) {
-        //if (true) {
+
+      //if (event.touches.length === 2) {
+      if (true) {
         const touch1 = event.touches[0]
-        const touch2 = event.touches[1]
-        //const touch2 = {
-        //  clientX: 0,
-        //  clientY: 0
-        //}
+        //const touch2 = event.touches[1]
+        const touch2 = {
+          clientX: 0,
+          clientY: 0
+        }
 
         const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY)
 
         if (prevDistance !== 0) {
           if (currentDistance > prevDistance) {
-            zoom += 3
+            zoom += 10
+            container.scrollBy(5, 5)
           } else if (currentDistance < prevDistance) {
-            zoom -= 3
+            zoom -= 10
+            container.scrollBy(-5, -5)
           }
         }
 
