@@ -74,21 +74,15 @@ export default () => {
           scroll = currentDistance - initialDistance
           scaleFactor += scroll
 
-          const deltaX = container.offsetWidth / 2 // половина ширины контейнера
-          const deltaY = container.offsetHeight / 2 // половина высоты контейнера
-
           if (scaleFactor > 0) {
-            container.scrollBy(scroll / 2 + deltaX, scroll / 2 + deltaY)
+            container.scrollBy(scroll / 2, scroll / 2)
           }
         } else {
           scroll = initialDistance - currentDistance
           scaleFactor -= scroll
 
-          const deltaX = container.offsetWidth / 2 // половина ширины контейнера
-          const deltaY = container.offsetHeight / 2 // половина высоты контейнера
-
           if (scaleFactor > 0) {
-            container.scrollBy(-(scroll / 2 + deltaX), -(scroll / 2 + deltaY))
+            container.scrollBy(-(scroll / 2), -(scroll / 2))
           }
         }
 
