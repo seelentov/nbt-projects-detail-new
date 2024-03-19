@@ -73,6 +73,7 @@ export default () => {
           scaleFactor -= currentDistance - initialDistance
         }
 
+        initialDistance = currentDistance
 
 
         img.style.height = `calc(100% + ${scaleFactor > 0 ? scaleFactor : 0}px)`
